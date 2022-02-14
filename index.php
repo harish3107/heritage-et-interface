@@ -40,44 +40,21 @@ $club[3]->AjouterSport($sportBallon3);
 $club[3]->AjouterSport($sportBallon4);
 $club[3]->AjouterSport($sportRelais2);
 
+// liste des clubs
 
-echo '<h2>Liste Des Clubs</h2><br>';
-echo '<a href="index.php?id=1">1-Dijon 63</a><br>';
-echo '<a href="index.php?id=2">2-PSG 67</a><br>';
-echo '<a href="index.php?id=3">3-Nantes 65</a><br>';
-
-
-if ($_GET['id'] == 1)
-{
-    echo '<h2> Liste des Sports de'.$club[$_GET['id']] -> getNomClub().'</h2>';
-    $sp1 = array();
-    $sp1=$club[$_GET['id']] -> getLesSports();
-    foreach ($sp1 as $keysp1 => $valueSp1){
-        echo $valueSp1->getDescription();
-}
+foreach ($club as $kClub => $vClub ){
+    echo '<a href="index.php?id='.$vClub->getIdClub().'">'.$vClub->getNomClub().'</a><br>';
 }
 
-if ($_GET ['id']==2)
-{
-    echo '<h2> Liste des Sports de'.$club[$_GET['id']] ->getNomClub().'</h2>';
-    $sp2=array();
-    $sp2=$club[$_GET['id']]->getLesSports();
-    foreach ($sp2 as $keysp2 => $valueSp2)
-    {
-        echo $valueSp2->getDescription();
+// liste des sport d'un club
+
+if ($_GET["id"]){
+    echo "<br>CLUB" . $club[$_GET["id"]]->getNomClub()."<br>";
+    foreach ($club[$_GET["id"]]->getLesSports() as $kSport => $vSport) {
+        echo $vSport->getNomSport()."<br>";
     }
 }
 
-if ($_GET['id']==3)
-{
-    echo '<h2> Liste des Sports de'.$club[$_GET['id']]->getNomClub().'</h2>';
-    $sp3=array();
-    $sp3=$club[$_GET['id']] ->getLesSports();
-    foreach ($sp3 as $keysp3 => $valueSp3)
-        {
-            echo $valueSp3->getDescription();
-        }
-}
 
 
 
