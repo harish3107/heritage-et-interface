@@ -25,6 +25,7 @@ if (isset($_GET["idCub"]) || isset($_POST["idClub"]) ) {
             echo $vSport->getNomSport() . "<br>";
         }
     }
+
 }
     else {
             echo "<br>CLUB" . $club[$_GET["idClub"]]->getNomClub() . "<br>";
