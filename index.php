@@ -8,9 +8,13 @@ include 'SportBallon.php';
 include 'SportRelais.php';
 include 'data.php';
 
+$dbh = new PDO('mysql:host=127.0.0.1:8889;dbname=gestionclub','root','root');
+foreach ($dbh->query( 'SELECT * from club') as $row){
+    print_r($row);
+}
+
 
 // liste des clubs
-
 foreach ($club as $kClub => $vClub ) {
     echo '<a href="result.php?idClub=' . $vClub->getIdClub() . '">' . $vClub->getNomClub() . '</a><br>';
 }
