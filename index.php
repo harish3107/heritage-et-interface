@@ -13,6 +13,7 @@ foreach ($dbh->query( 'SELECT * from club') as $row){
     print_r($row);
 }
 
+echo "<h2>listes des sports:</h2>";
 
 // liste des clubs
 foreach ($club as $kClub => $vClub ) {
